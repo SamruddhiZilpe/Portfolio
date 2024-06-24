@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samruddhi Zilpe Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="section">
+        <div class="home-content">
+            <h1 class="fade-in">Welcome to My Portfolio</h1>
+            <p class="fade-in">Hello, my name is Samruddi Zilpe. I'm a Software Developer!</p>
+            <a href="#about" class="btn">Learn More</a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <div class="about-content">
+            <img src="profileportfolio.jpg" alt="Profile Picture" class="profile-pic">
+            <div class="about-text">
+                <p>I'm a passionate software developer skilled in web and mobile app development, with expertise in React Native. I excel in creating intuitive user interfaces and implementing robust, performance-optimized solutions to drive user engagement and business success.</p>
+                <h3>Key Skills</h3>
+                <ul>
+                    <li>HTML & CSS</li>
+                    <li>JavaScript</li>
+                    <li>React Native</li>
+                    <li>Java</li>
+                    <li>SQL</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section">
+        <h2>Services</h2>
+        <div class="services-container">
+            <div class="service">
+                <i class="fas fa-code"></i>
+                <h3>Web Development</h3>
+                <p>Building responsive and modern websites.</p>
+            </div>
+            <div class="service">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Mobile App Development</h3>
+                <p>Creating user-friendly mobile applications.</p>
+            </div>
+            <div class="service">
+                <i class="fas fa-database"></i>
+                <h3>Database Management</h3>
+                <p>Efficient data storage and retrieval solutions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="section">
+        <h2>Projects</h2>
+        <div class="projects-container">
+            <div class="project">
+                <h3>The Education Bank</h3>
+                <p>Education Bank is a React Native app for streamlined online course registration, attendance tracking, and secure payments. Powered by `useContext` for efficient state management, it integrates seamlessly with APIs via Axios, ensuring a secure and user-friendly educational experience.</p>
+            </div>
+            <div class="project">
+                <h3>Meal Recipe App</h3>
+                <p>Meal Planner is a React Native app for seamless meal planning and recipe management. Users can browse, view meal details, and add to favorites effortlessly, enhanced by react-navigation for navigation and react-native-elements for intuitive UI components.</p>
+            </div>
+            <div class="project">
+                <h3>Guess Number</h3>
+                <p>A mobile game developed with React Native, challenging users to guess a randomly generated number. Features include intuitive UI components, state management, and responsive design, showcasing proficiency in React Native for cross-platform mobile development</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <form name="submit-to-google-sheet">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Send</button>
+        </form>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/samruddhi-zilpe/"><i class="fab fa-linkedin"></i></a>
+            <a href="https://github.com/SamruddhiZilpe"><i class="fab fa-github"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Samruddhi Zilpe. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </footer>
+    <script src="portfolio.js"></script>
+    <script>
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbyIiSlzpkbtEfpo-ekLBAShD4uQIpkCjUThsW7zx64QmnXCFhxEbMLlsnTzOTB0VeaUEw/exec'
+        const form = document.forms['submit-to-google-sheet']
+      
+        form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+            .then(response => console.log('Success!', response))
+            .catch(error => console.error('Error!', error.message))
+        })
+      </script>
+</body>
+</html>
